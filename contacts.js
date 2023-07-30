@@ -61,20 +61,20 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-    try {
-      const contacts = await readContacts();
-      const newContact = { id: Date.now().toString(), name, email, phone };
-      const updatedContacts = [...contacts, newContact];
-      await writeContacts(updatedContacts);
-      console.log('Contact added successfully');
-    } catch (error) {
-      console.error('Error adding contact:', error.message);
-    }
+  try {
+    const contacts = await readContacts();
+    const newContact = { id: Date.now().toString(), name, email, phone };
+    const updatedContacts = [...contacts, newContact];
+    await writeContacts(updatedContacts);
+    console.log("Contact added successfully");
+  } catch (error) {
+    console.error("Error adding contact:", error.message);
   }
+}
 
-  module.exports = {
-    listContacts,
-    getContactById,
-    removeContact,
-    addContact,
-  };
+module.exports = {
+  listContacts,
+  getContactById,
+  removeContact,
+  addContact,
+};
